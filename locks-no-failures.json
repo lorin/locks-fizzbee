@@ -2,11 +2,11 @@
   "sourceInfo": {
     "fileName": "locks-no-failures.fizz",
     "start": {
-      "line": 3,
+      "line": 8,
       "column": 1
     },
     "end": {
-      "line": 36,
+      "line": 41,
       "column": 1
     }
   },
@@ -14,11 +14,11 @@
     {
       "sourceInfo": {
         "start": {
-          "line": 3,
+          "line": 8,
           "column": 1
         },
         "end": {
-          "line": 12,
+          "line": 17,
           "column": 1
         }
       },
@@ -29,11 +29,11 @@
       "block": {
         "sourceInfo": {
           "start": {
-            "line": 4,
+            "line": 9,
             "column": 5
           },
           "end": {
-            "line": 12,
+            "line": 17,
             "column": 1
           }
         },
@@ -42,22 +42,22 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 4,
+                "line": 9,
                 "column": 5
               },
               "end": {
-                "line": 10,
+                "line": 15,
                 "column": 5
               }
             },
             "forStmt": {
               "sourceInfo": {
                 "start": {
-                  "line": 4,
+                  "line": 9,
                   "column": 5
                 },
                 "end": {
-                  "line": 10,
+                  "line": 15,
                   "column": 5
                 }
               },
@@ -68,11 +68,11 @@
               "block": {
                 "sourceInfo": {
                   "start": {
-                    "line": 5,
+                    "line": 10,
                     "column": 9
                   },
                   "end": {
-                    "line": 10,
+                    "line": 15,
                     "column": 5
                   }
                 },
@@ -80,22 +80,22 @@
                   {
                     "sourceInfo": {
                       "start": {
-                        "line": 5,
+                        "line": 10,
                         "column": 9
                       },
                       "end": {
-                        "line": 10,
+                        "line": 15,
                         "column": 5
                       }
                     },
                     "forStmt": {
                       "sourceInfo": {
                         "start": {
-                          "line": 5,
+                          "line": 10,
                           "column": 9
                         },
                         "end": {
-                          "line": 10,
+                          "line": 15,
                           "column": 5
                         }
                       },
@@ -106,11 +106,11 @@
                       "block": {
                         "sourceInfo": {
                           "start": {
-                            "line": 6,
+                            "line": 11,
                             "column": 13
                           },
                           "end": {
-                            "line": 10,
+                            "line": 15,
                             "column": 5
                           }
                         },
@@ -118,22 +118,22 @@
                           {
                             "sourceInfo": {
                               "start": {
-                                "line": 6,
+                                "line": 11,
                                 "column": 13
                               },
                               "end": {
-                                "line": 10,
+                                "line": 15,
                                 "column": 5
                               }
                             },
                             "ifStmt": {
                               "sourceInfo": {
                                 "start": {
-                                  "line": 6,
+                                  "line": 11,
                                   "column": 13
                                 },
                                 "end": {
-                                  "line": 10,
+                                  "line": 15,
                                   "column": 5
                                 }
                               },
@@ -141,11 +141,11 @@
                                 {
                                   "sourceInfo": {
                                     "start": {
-                                      "line": 6,
+                                      "line": 11,
                                       "column": 16
                                     },
                                     "end": {
-                                      "line": 10,
+                                      "line": 15,
                                       "column": 5
                                     }
                                   },
@@ -153,11 +153,11 @@
                                   "block": {
                                     "sourceInfo": {
                                       "start": {
-                                        "line": 9,
+                                        "line": 14,
                                         "column": 17
                                       },
                                       "end": {
-                                        "line": 10,
+                                        "line": 15,
                                         "column": 5
                                       }
                                     },
@@ -165,22 +165,22 @@
                                       {
                                         "sourceInfo": {
                                           "start": {
-                                            "line": 9,
+                                            "line": 14,
                                             "column": 17
                                           },
                                           "end": {
-                                            "line": 10,
+                                            "line": 15,
                                             "column": 5
                                           }
                                         },
                                         "returnStmt": {
                                           "sourceInfo": {
                                             "start": {
-                                              "line": 9,
+                                              "line": 14,
                                               "column": 17
                                             },
                                             "end": {
-                                              "line": 9,
+                                              "line": 14,
                                               "column": 24
                                             }
                                           },
@@ -188,11 +188,11 @@
                                           "expr": {
                                             "sourceInfo": {
                                               "start": {
-                                                "line": 9,
+                                                "line": 14,
                                                 "column": 24
                                               },
                                               "end": {
-                                                "line": 9,
+                                                "line": 14,
                                                 "column": 24
                                               }
                                             },
@@ -205,11 +205,11 @@
                                   "conditionExpr": {
                                     "sourceInfo": {
                                       "start": {
-                                        "line": 6,
+                                        "line": 11,
                                         "column": 16
                                       },
                                       "end": {
-                                        "line": 8,
+                                        "line": 13,
                                         "column": 22
                                       }
                                     },
@@ -224,11 +224,11 @@
                       "iterExpr": {
                         "sourceInfo": {
                           "start": {
-                            "line": 5,
+                            "line": 10,
                             "column": 19
                           },
                           "end": {
-                            "line": 5,
+                            "line": 10,
                             "column": 19
                           }
                         },
@@ -241,11 +241,11 @@
               "iterExpr": {
                 "sourceInfo": {
                   "start": {
-                    "line": 4,
+                    "line": 9,
                     "column": 15
                   },
                   "end": {
-                    "line": 4,
+                    "line": 9,
                     "column": 15
                   }
                 },
@@ -256,22 +256,22 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 10,
+                "line": 15,
                 "column": 5
               },
               "end": {
-                "line": 12,
+                "line": 17,
                 "column": 1
               }
             },
             "returnStmt": {
               "sourceInfo": {
                 "start": {
-                  "line": 10,
+                  "line": 15,
                   "column": 5
                 },
                 "end": {
-                  "line": 10,
+                  "line": 15,
                   "column": 12
                 }
               },
@@ -279,11 +279,11 @@
               "expr": {
                 "sourceInfo": {
                   "start": {
-                    "line": 10,
+                    "line": 15,
                     "column": 12
                   },
                   "end": {
-                    "line": 10,
+                    "line": 15,
                     "column": 12
                   }
                 },
@@ -300,11 +300,11 @@
     {
       "sourceInfo": {
         "start": {
-          "line": 31,
+          "line": 36,
           "column": 1
         },
         "end": {
-          "line": 36,
+          "line": 41,
           "column": 1
         }
       },
@@ -316,11 +316,11 @@
       "block": {
         "sourceInfo": {
           "start": {
-            "line": 32,
+            "line": 37,
             "column": 5
           },
           "end": {
-            "line": 36,
+            "line": 41,
             "column": 1
           }
         },
@@ -329,22 +329,22 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 32,
+                "line": 37,
                 "column": 5
               },
               "end": {
-                "line": 33,
+                "line": 38,
                 "column": 5
               }
             },
             "pyStmt": {
               "sourceInfo": {
                 "start": {
-                  "line": 32,
+                  "line": 37,
                   "column": 5
                 },
                 "end": {
-                  "line": 32,
+                  "line": 37,
                   "column": 18
                 }
               },
@@ -354,22 +354,22 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 33,
+                "line": 38,
                 "column": 5
               },
               "end": {
-                "line": 34,
+                "line": 39,
                 "column": 5
               }
             },
             "callStmt": {
               "sourceInfo": {
                 "start": {
-                  "line": 33,
+                  "line": 38,
                   "column": 5
                 },
                 "end": {
-                  "line": 33,
+                  "line": 38,
                   "column": 16
                 }
               },
@@ -382,22 +382,22 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 34,
+                "line": 39,
                 "column": 5
               },
               "end": {
-                "line": 36,
+                "line": 41,
                 "column": 1
               }
             },
             "forStmt": {
               "sourceInfo": {
                 "start": {
-                  "line": 34,
+                  "line": 39,
                   "column": 5
                 },
                 "end": {
-                  "line": 36,
+                  "line": 41,
                   "column": 1
                 }
               },
@@ -408,11 +408,11 @@
               "block": {
                 "sourceInfo": {
                   "start": {
-                    "line": 35,
+                    "line": 40,
                     "column": 9
                   },
                   "end": {
-                    "line": 36,
+                    "line": 41,
                     "column": 1
                   }
                 },
@@ -420,22 +420,22 @@
                   {
                     "sourceInfo": {
                       "start": {
-                        "line": 35,
+                        "line": 40,
                         "column": 9
                       },
                       "end": {
-                        "line": 36,
+                        "line": 41,
                         "column": 1
                       }
                     },
                     "callStmt": {
                       "sourceInfo": {
                         "start": {
-                          "line": 35,
+                          "line": 40,
                           "column": 9
                         },
                         "end": {
-                          "line": 35,
+                          "line": 40,
                           "column": 35
                         }
                       },
@@ -444,11 +444,11 @@
                         {
                           "sourceInfo": {
                             "start": {
-                              "line": 35,
+                              "line": 40,
                               "column": 26
                             },
                             "end": {
-                              "line": 35,
+                              "line": 40,
                               "column": 34
                             }
                           },
@@ -456,11 +456,11 @@
                           "expr": {
                             "sourceInfo": {
                               "start": {
-                                "line": 35,
+                                "line": 40,
                                 "column": 26
                               },
                               "end": {
-                                "line": 35,
+                                "line": 40,
                                 "column": 34
                               }
                             },
@@ -476,11 +476,11 @@
               "iterExpr": {
                 "sourceInfo": {
                   "start": {
-                    "line": 34,
+                    "line": 39,
                     "column": 14
                   },
                   "end": {
-                    "line": 34,
+                    "line": 39,
                     "column": 36
                   }
                 },
@@ -496,22 +496,22 @@
     {
       "sourceInfo": {
         "start": {
-          "line": 12,
+          "line": 17,
           "column": 1
         },
         "end": {
-          "line": 13,
+          "line": 18,
           "column": 1
         }
       },
       "callStmt": {
         "sourceInfo": {
           "start": {
-            "line": 12,
+            "line": 17,
             "column": 1
           },
           "end": {
-            "line": 12,
+            "line": 17,
             "column": 73
           }
         },
@@ -523,11 +523,11 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 12,
+                "line": 17,
                 "column": 11
               },
               "end": {
-                "line": 12,
+                "line": 17,
                 "column": 11
               }
             },
@@ -535,11 +535,11 @@
             "expr": {
               "sourceInfo": {
                 "start": {
-                  "line": 12,
+                  "line": 17,
                   "column": 11
                 },
                 "end": {
-                  "line": 12,
+                  "line": 17,
                   "column": 11
                 }
               },
@@ -549,11 +549,11 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 12,
+                "line": 17,
                 "column": 20
               },
               "end": {
-                "line": 12,
+                "line": 17,
                 "column": 20
               }
             },
@@ -561,11 +561,11 @@
             "expr": {
               "sourceInfo": {
                 "start": {
-                  "line": 12,
+                  "line": 17,
                   "column": 20
                 },
                 "end": {
-                  "line": 12,
+                  "line": 17,
                   "column": 20
                 }
               },
@@ -575,11 +575,11 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 12,
+                "line": 17,
                 "column": 33
               },
               "end": {
-                "line": 12,
+                "line": 17,
                 "column": 33
               }
             },
@@ -587,11 +587,11 @@
             "expr": {
               "sourceInfo": {
                 "start": {
-                  "line": 12,
+                  "line": 17,
                   "column": 33
                 },
                 "end": {
-                  "line": 12,
+                  "line": 17,
                   "column": 33
                 }
               },
@@ -601,11 +601,11 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 12,
+                "line": 17,
                 "column": 53
               },
               "end": {
-                "line": 12,
+                "line": 17,
                 "column": 53
               }
             },
@@ -613,11 +613,11 @@
             "expr": {
               "sourceInfo": {
                 "start": {
-                  "line": 12,
+                  "line": 17,
                   "column": 53
                 },
                 "end": {
-                  "line": 12,
+                  "line": 17,
                   "column": 53
                 }
               },
@@ -627,11 +627,11 @@
           {
             "sourceInfo": {
               "start": {
-                "line": 12,
+                "line": 17,
                 "column": 66
               },
               "end": {
-                "line": 12,
+                "line": 17,
                 "column": 66
               }
             },
@@ -639,11 +639,11 @@
             "expr": {
               "sourceInfo": {
                 "start": {
-                  "line": 12,
+                  "line": 17,
                   "column": 66
                 },
                 "end": {
-                  "line": 12,
+                  "line": 17,
                   "column": 66
                 }
               },
@@ -656,22 +656,22 @@
     {
       "sourceInfo": {
         "start": {
-          "line": 13,
+          "line": 18,
           "column": 1
         },
         "end": {
-          "line": 15,
+          "line": 20,
           "column": 1
         }
       },
       "pyStmt": {
         "sourceInfo": {
           "start": {
-            "line": 13,
+            "line": 18,
             "column": 1
           },
           "end": {
-            "line": 13,
+            "line": 18,
             "column": 17
           }
         },
@@ -683,11 +683,11 @@
     {
       "sourceInfo": {
         "start": {
-          "line": 15,
+          "line": 20,
           "column": 1
         },
         "end": {
-          "line": 31,
+          "line": 36,
           "column": 1
         }
       },
@@ -696,11 +696,11 @@
         {
           "sourceInfo": {
             "start": {
-              "line": 16,
+              "line": 21,
               "column": 5
             },
             "end": {
-              "line": 19,
+              "line": 24,
               "column": 5
             }
           },
@@ -712,11 +712,11 @@
           "block": {
             "sourceInfo": {
               "start": {
-                "line": 17,
+                "line": 22,
                 "column": 9
               },
               "end": {
-                "line": 19,
+                "line": 24,
                 "column": 5
               }
             },
@@ -725,22 +725,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 17,
+                    "line": 22,
                     "column": 9
                   },
                   "end": {
-                    "line": 19,
+                    "line": 24,
                     "column": 5
                   }
                 },
                 "pyStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 17,
+                      "line": 22,
                       "column": 9
                     },
                     "end": {
-                      "line": 17,
+                      "line": 22,
                       "column": 22
                     }
                   },
@@ -753,11 +753,11 @@
         {
           "sourceInfo": {
             "start": {
-              "line": 19,
+              "line": 24,
               "column": 5
             },
             "end": {
-              "line": 31,
+              "line": 36,
               "column": 1
             }
           },
@@ -766,11 +766,11 @@
           "fairness": {
             "sourceInfo": {
               "start": {
-                "line": 19,
+                "line": 24,
                 "column": 5
               },
               "end": {
-                "line": 19,
+                "line": 24,
                 "column": 5
               }
             },
@@ -779,11 +779,11 @@
           "block": {
             "sourceInfo": {
               "start": {
-                "line": 20,
+                "line": 25,
                 "column": 9
               },
               "end": {
-                "line": 31,
+                "line": 36,
                 "column": 1
               }
             },
@@ -792,22 +792,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 20,
+                    "line": 25,
                     "column": 9
                   },
                   "end": {
-                    "line": 21,
+                    "line": 26,
                     "column": 9
                   }
                 },
                 "requireStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 20,
+                      "line": 25,
                       "column": 9
                     },
                     "end": {
-                      "line": 20,
+                      "line": 25,
                       "column": 31
                     }
                   },
@@ -815,11 +815,11 @@
                   "conditionExpr": {
                     "sourceInfo": {
                       "start": {
-                        "line": 20,
+                        "line": 25,
                         "column": 17
                       },
                       "end": {
-                        "line": 20,
+                        "line": 25,
                         "column": 31
                       }
                     },
@@ -830,22 +830,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 21,
+                    "line": 26,
                     "column": 9
                   },
                   "end": {
-                    "line": 22,
+                    "line": 27,
                     "column": 9
                   }
                 },
                 "pyStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 21,
+                      "line": 26,
                       "column": 9
                     },
                     "end": {
-                      "line": 21,
+                      "line": 26,
                       "column": 22
                     }
                   },
@@ -855,22 +855,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 22,
+                    "line": 27,
                     "column": 9
                   },
                   "end": {
-                    "line": 23,
+                    "line": 28,
                     "column": 9
                   }
                 },
                 "requireStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 22,
+                      "line": 27,
                       "column": 9
                     },
                     "end": {
-                      "line": 22,
+                      "line": 27,
                       "column": 21
                     }
                   },
@@ -878,11 +878,11 @@
                   "conditionExpr": {
                     "sourceInfo": {
                       "start": {
-                        "line": 22,
+                        "line": 27,
                         "column": 17
                       },
                       "end": {
-                        "line": 22,
+                        "line": 27,
                         "column": 21
                       }
                     },
@@ -893,22 +893,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 23,
+                    "line": 28,
                     "column": 9
                   },
                   "end": {
-                    "line": 24,
+                    "line": 29,
                     "column": 9
                   }
                 },
                 "callStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 23,
+                      "line": 28,
                       "column": 9
                     },
                     "end": {
-                      "line": 23,
+                      "line": 28,
                       "column": 29
                     }
                   },
@@ -917,11 +917,11 @@
                     {
                       "sourceInfo": {
                         "start": {
-                          "line": 23,
+                          "line": 28,
                           "column": 18
                         },
                         "end": {
-                          "line": 23,
+                          "line": 28,
                           "column": 23
                         }
                       },
@@ -929,11 +929,11 @@
                       "expr": {
                         "sourceInfo": {
                           "start": {
-                            "line": 23,
+                            "line": 28,
                             "column": 18
                           },
                           "end": {
-                            "line": 23,
+                            "line": 28,
                             "column": 23
                           }
                         },
@@ -947,22 +947,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 24,
+                    "line": 29,
                     "column": 9
                   },
                   "end": {
-                    "line": 25,
+                    "line": 30,
                     "column": 9
                   }
                 },
                 "pyStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 24,
+                      "line": 29,
                       "column": 9
                     },
                     "end": {
-                      "line": 24,
+                      "line": 29,
                       "column": 22
                     }
                   },
@@ -972,22 +972,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 25,
+                    "line": 30,
                     "column": 9
                   },
                   "end": {
-                    "line": 26,
+                    "line": 31,
                     "column": 9
                   }
                 },
                 "pyStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 25,
+                      "line": 30,
                       "column": 9
                     },
                     "end": {
-                      "line": 25,
+                      "line": 30,
                       "column": 22
                     }
                   },
@@ -997,22 +997,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 26,
+                    "line": 31,
                     "column": 9
                   },
                   "end": {
-                    "line": 27,
+                    "line": 32,
                     "column": 9
                   }
                 },
                 "callStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 26,
+                      "line": 31,
                       "column": 9
                     },
                     "end": {
-                      "line": 26,
+                      "line": 31,
                       "column": 20
                     }
                   },
@@ -1023,22 +1023,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 27,
+                    "line": 32,
                     "column": 9
                   },
                   "end": {
-                    "line": 28,
+                    "line": 33,
                     "column": 9
                   }
                 },
                 "pyStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 27,
+                      "line": 32,
                       "column": 9
                     },
                     "end": {
-                      "line": 27,
+                      "line": 32,
                       "column": 22
                     }
                   },
@@ -1048,22 +1048,22 @@
               {
                 "sourceInfo": {
                   "start": {
-                    "line": 28,
+                    "line": 33,
                     "column": 9
                   },
                   "end": {
-                    "line": 31,
+                    "line": 36,
                     "column": 1
                   }
                 },
                 "pyStmt": {
                   "sourceInfo": {
                     "start": {
-                      "line": 28,
+                      "line": 33,
                       "column": 9
                     },
                     "end": {
-                      "line": 28,
+                      "line": 33,
                       "column": 22
                     }
                   },
@@ -1076,5 +1076,7 @@
       ]
     }
   ],
-  "frontMatter": {}
+  "frontMatter": {
+    "yaml": "options:\n    crash_on_yield: false\n"
+  }
 }

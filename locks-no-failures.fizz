@@ -1,5 +1,6 @@
 ---
-
+options:
+    crash_on_yield: false
 ---
 # Model locking without the possibility of failure
 
