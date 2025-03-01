@@ -1,0 +1,28 @@
+digraph G {
+  "0" [label="yield
+Actions: 0, Forks: 0
+State: {\"lock\":\"[]\",\"processes\":\"[role Process#0 (fields(pc = \"BEFORE\")), role Process#1 (fields(pc = \"BEFORE\"))]\"}
+", color="black" penwidth="2" ];
+  "1" [label="yield
+Actions: 1, Forks: 1
+State: {\"lock\":\"[]\",\"processes\":\"[role Process#0 (fields(pc = \"ACQUIRING\")), role Process#1 (fields(pc = \"BEFORE\"))]\"}
+Threads: 0/1
+", color="black" penwidth="2" ];
+  "0" -> "1" [label="1: Process#0.Next"];
+  "2" [label="yield
+Actions: 1, Forks: 2
+State: {\"lock\":\"[]\",\"processes\":\"[role Process#0 (fields(pc = \"ACQUIRING\")), role Process#1 (fields(pc = \"BEFORE\"))]\"}
+", color="black" penwidth="2" ];
+  "1" -> "2" [label="2: crash"];
+  "3" [label="yield
+Actions: 2, Forks: 3
+State: {\"lock\":\"[]\",\"processes\":\"[role Process#0 (fields(pc = \"ACQUIRING\")), role Process#1 (fields(pc = \"ACQUIRING\"))]\"}
+Threads: 0/1
+", color="black" penwidth="2" ];
+  "2" -> "3" [label="3: Process#1.Next"];
+  "4" [label="crash
+Actions: 2, Forks: 4
+State: {\"lock\":\"[]\",\"processes\":\"[role Process#0 (fields(pc = \"ACQUIRING\")), role Process#1 (fields(pc = \"ACQUIRING\"))]\"}
+", color="black" penwidth="2" ];
+  "3" -> "4" [label="4: crash"];
+}

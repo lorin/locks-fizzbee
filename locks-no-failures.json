@@ -1,0 +1,1080 @@
+{
+  "sourceInfo": {
+    "fileName": "locks-no-failures.fizz",
+    "start": {
+      "line": 3,
+      "column": 1
+    },
+    "end": {
+      "line": 36,
+      "column": 1
+    }
+  },
+  "invariants": [
+    {
+      "sourceInfo": {
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 1
+        }
+      },
+      "name": "MutualExclusion",
+      "temporalOperators": [
+        "always"
+      ],
+      "block": {
+        "sourceInfo": {
+          "start": {
+            "line": 4,
+            "column": 5
+          },
+          "end": {
+            "line": 12,
+            "column": 1
+          }
+        },
+        "flow": "FLOW_ATOMIC",
+        "stmts": [
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 4,
+                "column": 5
+              },
+              "end": {
+                "line": 10,
+                "column": 5
+              }
+            },
+            "forStmt": {
+              "sourceInfo": {
+                "start": {
+                  "line": 4,
+                  "column": 5
+                },
+                "end": {
+                  "line": 10,
+                  "column": 5
+                }
+              },
+              "loopVars": [
+                "p1"
+              ],
+              "pyExpr": "processes",
+              "block": {
+                "sourceInfo": {
+                  "start": {
+                    "line": 5,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 5
+                  }
+                },
+                "stmts": [
+                  {
+                    "sourceInfo": {
+                      "start": {
+                        "line": 5,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 5
+                      }
+                    },
+                    "forStmt": {
+                      "sourceInfo": {
+                        "start": {
+                          "line": 5,
+                          "column": 9
+                        },
+                        "end": {
+                          "line": 10,
+                          "column": 5
+                        }
+                      },
+                      "loopVars": [
+                        "p2"
+                      ],
+                      "pyExpr": "processes",
+                      "block": {
+                        "sourceInfo": {
+                          "start": {
+                            "line": 6,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 5
+                          }
+                        },
+                        "stmts": [
+                          {
+                            "sourceInfo": {
+                              "start": {
+                                "line": 6,
+                                "column": 13
+                              },
+                              "end": {
+                                "line": 10,
+                                "column": 5
+                              }
+                            },
+                            "ifStmt": {
+                              "sourceInfo": {
+                                "start": {
+                                  "line": 6,
+                                  "column": 13
+                                },
+                                "end": {
+                                  "line": 10,
+                                  "column": 5
+                                }
+                              },
+                              "branches": [
+                                {
+                                  "sourceInfo": {
+                                    "start": {
+                                      "line": 6,
+                                      "column": 16
+                                    },
+                                    "end": {
+                                      "line": 10,
+                                      "column": 5
+                                    }
+                                  },
+                                  "condition": "p1.pc == PC.CRITICAL_SECTION and \\\n               p2.pc == PC.CRITICAL_SECTION and \\\n               p1 != p2",
+                                  "block": {
+                                    "sourceInfo": {
+                                      "start": {
+                                        "line": 9,
+                                        "column": 17
+                                      },
+                                      "end": {
+                                        "line": 10,
+                                        "column": 5
+                                      }
+                                    },
+                                    "stmts": [
+                                      {
+                                        "sourceInfo": {
+                                          "start": {
+                                            "line": 9,
+                                            "column": 17
+                                          },
+                                          "end": {
+                                            "line": 10,
+                                            "column": 5
+                                          }
+                                        },
+                                        "returnStmt": {
+                                          "sourceInfo": {
+                                            "start": {
+                                              "line": 9,
+                                              "column": 17
+                                            },
+                                            "end": {
+                                              "line": 9,
+                                              "column": 24
+                                            }
+                                          },
+                                          "pyExpr": "False",
+                                          "expr": {
+                                            "sourceInfo": {
+                                              "start": {
+                                                "line": 9,
+                                                "column": 24
+                                              },
+                                              "end": {
+                                                "line": 9,
+                                                "column": 24
+                                              }
+                                            },
+                                            "pyExpr": "False"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "conditionExpr": {
+                                    "sourceInfo": {
+                                      "start": {
+                                        "line": 6,
+                                        "column": 16
+                                      },
+                                      "end": {
+                                        "line": 8,
+                                        "column": 22
+                                      }
+                                    },
+                                    "pyExpr": "p1.pc == PC.CRITICAL_SECTION and \\\n               p2.pc == PC.CRITICAL_SECTION and \\\n               p1 != p2"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "iterExpr": {
+                        "sourceInfo": {
+                          "start": {
+                            "line": 5,
+                            "column": 19
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 19
+                          }
+                        },
+                        "pyExpr": "processes"
+                      }
+                    }
+                  }
+                ]
+              },
+              "iterExpr": {
+                "sourceInfo": {
+                  "start": {
+                    "line": 4,
+                    "column": 15
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 15
+                  }
+                },
+                "pyExpr": "processes"
+              }
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 10,
+                "column": 5
+              },
+              "end": {
+                "line": 12,
+                "column": 1
+              }
+            },
+            "returnStmt": {
+              "sourceInfo": {
+                "start": {
+                  "line": 10,
+                  "column": 5
+                },
+                "end": {
+                  "line": 10,
+                  "column": 12
+                }
+              },
+              "pyExpr": "True",
+              "expr": {
+                "sourceInfo": {
+                  "start": {
+                    "line": 10,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 12
+                  }
+                },
+                "pyExpr": "True"
+              }
+            }
+          }
+        ]
+      },
+      "pyCode": "def MutualExclusion():\n    for p1 in processes:\n        for p2 in processes:\n            if p1.pc == PC.CRITICAL_SECTION and \\\n               p2.pc == PC.CRITICAL_SECTION and \\\n               p1 != p2:\n                return False\n    return True\n\n"
+    }
+  ],
+  "actions": [
+    {
+      "sourceInfo": {
+        "start": {
+          "line": 31,
+          "column": 1
+        },
+        "end": {
+          "line": 36,
+          "column": 1
+        }
+      },
+      "name": "Init",
+      "flow": "FLOW_ATOMIC",
+      "fairness": {
+        "level": "FAIRNESS_LEVEL_STRONG"
+      },
+      "block": {
+        "sourceInfo": {
+          "start": {
+            "line": 32,
+            "column": 5
+          },
+          "end": {
+            "line": 36,
+            "column": 1
+          }
+        },
+        "flow": "FLOW_ATOMIC",
+        "stmts": [
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 32,
+                "column": 5
+              },
+              "end": {
+                "line": 33,
+                "column": 5
+              }
+            },
+            "pyStmt": {
+              "sourceInfo": {
+                "start": {
+                  "line": 32,
+                  "column": 5
+                },
+                "end": {
+                  "line": 32,
+                  "column": 18
+                }
+              },
+              "code": "processes = []"
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 33,
+                "column": 5
+              },
+              "end": {
+                "line": 34,
+                "column": 5
+              }
+            },
+            "callStmt": {
+              "sourceInfo": {
+                "start": {
+                  "line": 33,
+                  "column": 5
+                },
+                "end": {
+                  "line": 33,
+                  "column": 16
+                }
+              },
+              "vars": [
+                "lock"
+              ],
+              "name": "set"
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 34,
+                "column": 5
+              },
+              "end": {
+                "line": 36,
+                "column": 1
+              }
+            },
+            "forStmt": {
+              "sourceInfo": {
+                "start": {
+                  "line": 34,
+                  "column": 5
+                },
+                "end": {
+                  "line": 36,
+                  "column": 1
+                }
+              },
+              "loopVars": [
+                "i"
+              ],
+              "pyExpr": "range(0, NUM_PROCESSES)",
+              "block": {
+                "sourceInfo": {
+                  "start": {
+                    "line": 35,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 1
+                  }
+                },
+                "stmts": [
+                  {
+                    "sourceInfo": {
+                      "start": {
+                        "line": 35,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 36,
+                        "column": 1
+                      }
+                    },
+                    "callStmt": {
+                      "sourceInfo": {
+                        "start": {
+                          "line": 35,
+                          "column": 9
+                        },
+                        "end": {
+                          "line": 35,
+                          "column": 35
+                        }
+                      },
+                      "name": "append",
+                      "args": [
+                        {
+                          "sourceInfo": {
+                            "start": {
+                              "line": 35,
+                              "column": 26
+                            },
+                            "end": {
+                              "line": 35,
+                              "column": 34
+                            }
+                          },
+                          "pyExpr": "Process()",
+                          "expr": {
+                            "sourceInfo": {
+                              "start": {
+                                "line": 35,
+                                "column": 26
+                              },
+                              "end": {
+                                "line": 35,
+                                "column": 34
+                              }
+                            },
+                            "pyExpr": "Process()"
+                          }
+                        }
+                      ],
+                      "receiver": "processes"
+                    }
+                  }
+                ]
+              },
+              "iterExpr": {
+                "sourceInfo": {
+                  "start": {
+                    "line": 34,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 34,
+                    "column": 36
+                  }
+                },
+                "pyExpr": "range(0, NUM_PROCESSES)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "stmts": [
+    {
+      "sourceInfo": {
+        "start": {
+          "line": 12,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 1
+        }
+      },
+      "callStmt": {
+        "sourceInfo": {
+          "start": {
+            "line": 12,
+            "column": 1
+          },
+          "end": {
+            "line": 12,
+            "column": 73
+          }
+        },
+        "vars": [
+          "PC"
+        ],
+        "name": "enum",
+        "args": [
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 12,
+                "column": 11
+              },
+              "end": {
+                "line": 12,
+                "column": 11
+              }
+            },
+            "pyExpr": "'BEFORE'",
+            "expr": {
+              "sourceInfo": {
+                "start": {
+                  "line": 12,
+                  "column": 11
+                },
+                "end": {
+                  "line": 12,
+                  "column": 11
+                }
+              },
+              "pyExpr": "'BEFORE'"
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 12,
+                "column": 20
+              },
+              "end": {
+                "line": 12,
+                "column": 20
+              }
+            },
+            "pyExpr": "'ACQUIRING'",
+            "expr": {
+              "sourceInfo": {
+                "start": {
+                  "line": 12,
+                  "column": 20
+                },
+                "end": {
+                  "line": 12,
+                  "column": 20
+                }
+              },
+              "pyExpr": "'ACQUIRING'"
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 12,
+                "column": 33
+              },
+              "end": {
+                "line": 12,
+                "column": 33
+              }
+            },
+            "pyExpr": "'CRITICAL_SECTION'",
+            "expr": {
+              "sourceInfo": {
+                "start": {
+                  "line": 12,
+                  "column": 33
+                },
+                "end": {
+                  "line": 12,
+                  "column": 33
+                }
+              },
+              "pyExpr": "'CRITICAL_SECTION'"
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 12,
+                "column": 53
+              },
+              "end": {
+                "line": 12,
+                "column": 53
+              }
+            },
+            "pyExpr": "'RELEASING'",
+            "expr": {
+              "sourceInfo": {
+                "start": {
+                  "line": 12,
+                  "column": 53
+                },
+                "end": {
+                  "line": 12,
+                  "column": 53
+                }
+              },
+              "pyExpr": "'RELEASING'"
+            }
+          },
+          {
+            "sourceInfo": {
+              "start": {
+                "line": 12,
+                "column": 66
+              },
+              "end": {
+                "line": 12,
+                "column": 66
+              }
+            },
+            "pyExpr": "'AFTER'",
+            "expr": {
+              "sourceInfo": {
+                "start": {
+                  "line": 12,
+                  "column": 66
+                },
+                "end": {
+                  "line": 12,
+                  "column": 66
+                }
+              },
+              "pyExpr": "'AFTER'"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "sourceInfo": {
+        "start": {
+          "line": 13,
+          "column": 1
+        },
+        "end": {
+          "line": 15,
+          "column": 1
+        }
+      },
+      "pyStmt": {
+        "sourceInfo": {
+          "start": {
+            "line": 13,
+            "column": 1
+          },
+          "end": {
+            "line": 13,
+            "column": 17
+          }
+        },
+        "code": "NUM_PROCESSES = 2"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "sourceInfo": {
+        "start": {
+          "line": 15,
+          "column": 1
+        },
+        "end": {
+          "line": 31,
+          "column": 1
+        }
+      },
+      "name": "Process",
+      "actions": [
+        {
+          "sourceInfo": {
+            "start": {
+              "line": 16,
+              "column": 5
+            },
+            "end": {
+              "line": 19,
+              "column": 5
+            }
+          },
+          "name": "Init",
+          "flow": "FLOW_ATOMIC",
+          "fairness": {
+            "level": "FAIRNESS_LEVEL_STRONG"
+          },
+          "block": {
+            "sourceInfo": {
+              "start": {
+                "line": 17,
+                "column": 9
+              },
+              "end": {
+                "line": 19,
+                "column": 5
+              }
+            },
+            "flow": "FLOW_ATOMIC",
+            "stmts": [
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 17,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 19,
+                    "column": 5
+                  }
+                },
+                "pyStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 17,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 22
+                    }
+                  },
+                  "code": "self.pc = PC.BEFORE"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "sourceInfo": {
+            "start": {
+              "line": 19,
+              "column": 5
+            },
+            "end": {
+              "line": 31,
+              "column": 1
+            }
+          },
+          "name": "Next",
+          "flow": "FLOW_SERIAL",
+          "fairness": {
+            "sourceInfo": {
+              "start": {
+                "line": 19,
+                "column": 5
+              },
+              "end": {
+                "line": 19,
+                "column": 5
+              }
+            },
+            "level": "FAIRNESS_LEVEL_WEAK"
+          },
+          "block": {
+            "sourceInfo": {
+              "start": {
+                "line": 20,
+                "column": 9
+              },
+              "end": {
+                "line": 31,
+                "column": 1
+              }
+            },
+            "flow": "FLOW_SERIAL",
+            "stmts": [
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 20,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 21,
+                    "column": 9
+                  }
+                },
+                "requireStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 20,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 31
+                    }
+                  },
+                  "condition": "self.pc == PC.BEFORE",
+                  "conditionExpr": {
+                    "sourceInfo": {
+                      "start": {
+                        "line": 20,
+                        "column": 17
+                      },
+                      "end": {
+                        "line": 20,
+                        "column": 31
+                      }
+                    },
+                    "pyExpr": "self.pc == PC.BEFORE"
+                  }
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 21,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 9
+                  }
+                },
+                "pyStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 21,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 22
+                    }
+                  },
+                  "code": "self.pc = PC.ACQUIRING"
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 22,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 23,
+                    "column": 9
+                  }
+                },
+                "requireStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 22,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 21
+                    }
+                  },
+                  "condition": "not lock",
+                  "conditionExpr": {
+                    "sourceInfo": {
+                      "start": {
+                        "line": 22,
+                        "column": 17
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 21
+                      }
+                    },
+                    "pyExpr": "not lock"
+                  }
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 23,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 24,
+                    "column": 9
+                  }
+                },
+                "callStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 23,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 23,
+                      "column": 29
+                    }
+                  },
+                  "name": "add",
+                  "args": [
+                    {
+                      "sourceInfo": {
+                        "start": {
+                          "line": 23,
+                          "column": 18
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 23
+                        }
+                      },
+                      "pyExpr": "self.__id__",
+                      "expr": {
+                        "sourceInfo": {
+                          "start": {
+                            "line": 23,
+                            "column": 18
+                          },
+                          "end": {
+                            "line": 23,
+                            "column": 23
+                          }
+                        },
+                        "pyExpr": "self.__id__"
+                      }
+                    }
+                  ],
+                  "receiver": "lock"
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 24,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 9
+                  }
+                },
+                "pyStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 24,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 24,
+                      "column": 22
+                    }
+                  },
+                  "code": "self.pc = PC.CRITICAL_SECTION"
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 25,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 9
+                  }
+                },
+                "pyStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 25,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 25,
+                      "column": 22
+                    }
+                  },
+                  "code": "self.pc = PC.RELEASING"
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 26,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 27,
+                    "column": 9
+                  }
+                },
+                "callStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 26,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 20
+                    }
+                  },
+                  "name": "clear",
+                  "receiver": "lock"
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 27,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 28,
+                    "column": 9
+                  }
+                },
+                "pyStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 27,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 27,
+                      "column": 22
+                    }
+                  },
+                  "code": "self.pc = PC.AFTER"
+                }
+              },
+              {
+                "sourceInfo": {
+                  "start": {
+                    "line": 28,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 31,
+                    "column": 1
+                  }
+                },
+                "pyStmt": {
+                  "sourceInfo": {
+                    "start": {
+                      "line": 28,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 28,
+                      "column": 22
+                    }
+                  },
+                  "code": "self.pc = PC.BEFORE"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "frontMatter": {}
+}

@@ -1,0 +1,47 @@
+# Model locking with the possibility of failure
+
+always assertion MutualExclusion:
+    for p1 in processes:
+        for p2 in processes:
+            if p1.pc == PC.CRITICAL_SECTION and \
+               p2.pc == PC.CRITICAL_SECTION and \
+               p1 != p2:
+                return False
+    return True
+
+PC = enum('BEFORE', 'ACQUIRED', 'CRITICAL_SECTION', 'AFTER', 'FAILED')
+NUM_PROCESSES = 2
+
+role Process:
+    action Init:
+        self.pc = PC.BEFORE
+
+    atomic action Acquire:
+        require self.pc == PC.BEFORE and not lock
+        lock.add(self.__id__)
+        self.pc = PC.ACQUIRED
+
+    action EnterCriticalSection:
+        require self.pc == PC.ACQUIRED
+        self.pc = PC.CRITICAL_SECTION
+
+    atomic action LeaveCriticalSection:
+        require self.pc == PC.CRITICAL_SECTION
+        self.pc = PC.AFTER
+        lock.clear()
+
+    action ReturnToStart:
+        require self.pc == PC.AFTER
+        self.pc = PC.BEFORE
+
+    action Failure:
+        self.pc = PC.FAILED
+
+
+
+
+action Init:
+    processes = []
+    lock = set()
+    for i in range(0, NUM_PROCESSES):
+        processes.append(Process())

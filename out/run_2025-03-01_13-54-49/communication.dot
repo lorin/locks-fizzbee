@@ -1,0 +1,15 @@
+digraph G {
+  node [shape=box];
+  splines=false;
+  rankdir=LR;
+  "Process" [shape=none label=<<table cellpadding="14" cellspacing="8" style="dashed">
+      <tr><td port="p0">Process#0</td></tr>
+      <tr><td port="p1" border="0">&#x022EE;</td></tr>
+      <tr><td port="p2">Process#2</td></tr>
+      </table>>]
+  "FairActionProcess" [shape=none label=<<table cellpadding="14" cellspacing="8" style="invisible"><tr>
+      <td port="Next"></td>
+      </tr></table>>]
+  { rank=same; "Process"; "FairActionProcess"; }
+  "FairActionProcess":Next -> "Process" [label="Next"];
+}
