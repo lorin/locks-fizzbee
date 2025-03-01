@@ -6,35 +6,44 @@ options:
 
 
 always assertion MutualExclusion:
-    for p1 in processes:
-        for p2 in processes:
-            if p1.pc == PC.CRITICAL_SECTION and \
-               p2.pc == PC.CRITICAL_SECTION and \
-               p1 != p2:
-                return False
-    return True
+    return len(in_cs) <= 1
 
-PC = enum('BEFORE','ACQUIRING', 'CRITICAL_SECTION', 'RELEASING', 'AFTER')
+STATE = enum('READY', 'RUNNING')
 NUM_PROCESSES = 2
 
 role Process:
     action Init:
-        self.pc = PC.BEFORE
+        self.state = STATE.READY
 
-    fair action Next:
-        require self.pc == PC.BEFORE
-        self.pc = PC.ACQUIRING
-        require not lock
-        lock.add(self.__id__)
-        self.pc = PC.CRITICAL_SECTION
-        self.pc = PC.RELEASING
+    action Next:
+        atomic:
+            require self.state == STATE.READY
+            self.state = STATE.RUNNING
+
+        # before critical section
+        pass
+
+        # acquire lock
+        atomic:
+            require not lock
+            lock.add(self.__id__)
+
+        #
+        # critical section
+        #
+        in_cs.add(self.__id__)
+        pass
+        in_cs.remove(self.__id__)
+
+        # release lock
         lock.clear()
-        self.pc = PC.AFTER
-        self.pc = PC.BEFORE
+        self.state = STATE.READY
+
 
 
 action Init:
     processes = []
     lock = set()
+    in_cs = set()
     for i in range(0, NUM_PROCESSES):
         processes.append(Process())
