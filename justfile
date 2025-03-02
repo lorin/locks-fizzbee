@@ -1,7 +1,10 @@
 FIZZ := "../fizzbee/fizz"
 
-locks-no-failures:
-    {{FIZZ}} locks-no-failures.fizz
+leases:
+    {{FIZZ}} leases.fizz
+
+locks:
+    {{FIZZ}} locks.fizz
 
 cs:
     {{FIZZ}} cs.fizz

@@ -1,0 +1,48 @@
+NUM_PROCESSES = 2
+LEASE_LENGTH = 3
+
+
+always assertion MutualExclusion:
+    return len(in_cs) <= 1
+
+atomic action AdvanceClock:
+    inc = any [1,2,3]
+    now = now + inc
+
+STATE = enum('READY', 'RUNNING')
+
+role Process:
+    action Init:
+        self.state = STATE.READY
+        self.acquired = False
+
+    atomic action Acquire:
+        require lock.owner == None or now>=lock.expiration_time
+        self.state = STATE.RUNNING
+        lock = record(owner=self.__id__, expiration_time=now+LEASE_LENGTH)
+        self.acquired = True
+
+    action CriticalSection:
+        atomic:
+            require self.acquired
+            self.acquired = False
+
+        in_cs.add(self.__id__)
+        pass  # this represents being in the critical section
+        in_cs.remove(self.__id__)
+
+        # release the lock
+        atomic:
+            if lock.owner == self.__id__:
+                lock.owner = None
+
+
+
+action Init:
+    processes = []
+    in_cs = set()
+    # global clock
+    now = 0
+    lock = record(owner=None, expiration_time=-1)
+    for i in range(0, NUM_PROCESSES):
+        processes.append(Process())
