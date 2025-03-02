@@ -6,28 +6,19 @@ options:
 always assertion MutualExclusion:
     return len(in_cs) <= 1
 
-STATE = enum('READY', 'RUNNING', 'ACQUIRING')
 NUM_PROCESSES = 3
 
 role Process:
     action Init:
-        self.state = STATE.READY
+        self.init = True
 
     action Next:
-        atomic:
-            require self.state == STATE.READY
-            self.state = STATE.RUNNING
-
         # before critical section
         pass
 
-        # acquire lock if needed
-        if lock:
-            self.state = STATE.ACQUIRING
         atomic:
             require not lock
             lock.add(self.__id__)
-            self.state = STATE.RUNNING
 
         #
         # critical section
@@ -38,12 +29,6 @@ role Process:
 
         # release lock
         lock.clear()
-        self.state = STATE.READY
-
-    # no-op action so crash-recovery doesn't deadlock in running state
-    action Running:
-        require self.state == STATE.RUNNING
-        pass
 
 
 action Init:
