@@ -23,10 +23,6 @@ role Process:
             require self.state == STATE.READY
             self.state = STATE.RUNNING
 
-        # crash recovery: release lock if we own it
-        if self.__id__ in lock:
-            lock.remove(self.__id__)
-
         # before critical section
         pass
 
