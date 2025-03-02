@@ -1,5 +1,5 @@
 NUM_PROCESSES = 2
-LEASE_LENGTH = 3
+LEASE_LENGTH = 10
 
 
 always assertion MutualExclusion:
@@ -9,25 +9,24 @@ atomic action AdvanceClock:
     inc = any [1,2,3]
     now = now + inc
 
-STATE = enum('READY', 'RUNNING')
+STATE = enum('READY', 'ACQUIRED', 'CRITICAL_SECTION')
 
 role Process:
     action Init:
         self.state = STATE.READY
-        self.acquired = False
 
     atomic action Acquire:
+        require self.state == STATE.READY
         require lock.owner == None or now>=lock.expiration_time
-        self.state = STATE.RUNNING
+        self.state = STATE.ACQUIRED
         lock = record(owner=self.__id__, expiration_time=now+LEASE_LENGTH)
-        self.acquired = True
 
     action CriticalSection:
         atomic:
-            require self.acquired
-            self.acquired = False
+            require self.state == STATE.ACQUIRED
+            self.state = STATE.CRITICAL_SECTION
+            in_cs.add(self.__id__)
 
-        in_cs.add(self.__id__)
         pass  # this represents being in the critical section
         in_cs.remove(self.__id__)
 
@@ -35,7 +34,7 @@ role Process:
         atomic:
             if lock.owner == self.__id__:
                 lock.owner = None
-
+        self.state = 'READY'
 
 
 action Init:
