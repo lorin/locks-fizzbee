@@ -3,7 +3,13 @@ LEASE_LENGTH = 10
 
 
 always assertion MutualExclusion:
-    return len(in_cs) <= 1
+    for p1 in processes:
+        for p2 in processes:
+            if  p1.state == STATE.CRITICAL_SECTION \
+            and p2.state == STATE.CRITICAL_SECTION \
+            and p1 != p2:
+                return False
+    return True
 
 atomic action AdvanceClock:
     inc = any [1,2,3]
@@ -25,21 +31,18 @@ role Process:
         atomic:
             require self.state == STATE.ACQUIRED
             self.state = STATE.CRITICAL_SECTION
-            in_cs.add(self.__id__)
 
         pass  # this represents being in the critical section
-        in_cs.remove(self.__id__)
 
-        # release the lock
         atomic:
+            self.state = 'READY'
+            # release the lock
             if lock.owner == self.__id__:
                 lock.owner = None
-        self.state = 'READY'
 
 
 action Init:
     processes = []
-    in_cs = set()
     # global clock
     now = 0
     lock = record(owner=None, expiration_time=-1)
