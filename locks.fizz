@@ -1,47 +1,54 @@
-# Model locking with the possibility of failure
+---
+options:
+    crash_on_yield: true
+---
 
 always assertion MutualExclusion:
-    for p1 in processes:
-        for p2 in processes:
-            if p1.pc == PC.CRITICAL_SECTION and \
-               p2.pc == PC.CRITICAL_SECTION and \
-               p1 != p2:
-                return False
-    return True
+    return len(in_cs) <= 1
 
-PC = enum('BEFORE', 'ACQUIRED', 'CRITICAL_SECTION', 'AFTER', 'FAILED')
-NUM_PROCESSES = 2
+STATE = enum('READY', 'RUNNING', 'ACQUIRING')
+NUM_PROCESSES = 3
 
 role Process:
     action Init:
-        self.pc = PC.BEFORE
+        self.state = STATE.READY
 
-    atomic action Acquire:
-        require self.pc == PC.BEFORE and not lock
-        lock.add(self.__id__)
-        self.pc = PC.ACQUIRED
+    action Next:
+        atomic:
+            require self.state == STATE.READY
+            self.state = STATE.RUNNING
 
-    action EnterCriticalSection:
-        require self.pc == PC.ACQUIRED
-        self.pc = PC.CRITICAL_SECTION
+        # before critical section
+        pass
 
-    atomic action LeaveCriticalSection:
-        require self.pc == PC.CRITICAL_SECTION
-        self.pc = PC.AFTER
+        # acquire lock if needed
+        if lock:
+            self.state = STATE.ACQUIRING
+        atomic:
+            require not lock
+            lock.add(self.__id__)
+            self.state = STATE.RUNNING
+
+        #
+        # critical section
+        #
+        in_cs.add(self.__id__)
+        pass
+        in_cs.remove(self.__id__)
+
+        # release lock
         lock.clear()
+        self.state = STATE.READY
 
-    action ReturnToStart:
-        require self.pc == PC.AFTER
-        self.pc = PC.BEFORE
-
-    action Failure:
-        self.pc = PC.FAILED
-
-
+    # no-op action so crash-recovery doesn't deadlock in running state
+    action Running:
+        require self.state == STATE.RUNNING
+        pass
 
 
 action Init:
     processes = []
     lock = set()
+    in_cs = set()
     for i in range(0, NUM_PROCESSES):
         processes.append(Process())
