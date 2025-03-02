@@ -10,7 +10,7 @@ always assertion MutualExclusion:
     return True
 
 atomic action AdvanceClock:
-    now = now + 1
+    clock = clock + 1
 
 role Process:
     action Init:
@@ -18,8 +18,8 @@ role Process:
 
     action Next:
         atomic:
-            require lock.owner == None or now>=lock.expiration_time
-            lock = record(owner=self.__id__, expiration_time=now+LEASE_LENGTH)
+            require lock.owner == None or clock>=lock.expiration_time
+            lock = record(owner=self.__id__, expiration_time=clock+LEASE_LENGTH)
 
         # check we still have the lock before entering the criticla section
         # if we don't have it, we'll just exit this and start over
@@ -40,7 +40,7 @@ role Process:
 action Init:
     processes = []
     # global clock
-    now = 0
+    clock = 0
     lock = record(owner=None, expiration_time=-1)
     for i in range(0, NUM_PROCESSES):
         processes.append(Process())
