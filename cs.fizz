@@ -5,28 +5,29 @@ options:
 # Model a critical section with no enforcement of mutual exclusion
 
 always assertion MutualExclusion:
-    return len(in_cs) <= 1
+    for p1 in processes:
+        for p2 in processes:
+            if p1.in_cs and p2.in_cs and p1!=p2:
+                return False
+    return True
 
 STATE = enum('READY', 'RUNNING')
 NUM_PROCESSES = 2
 
 role Process:
     action Init:
-        self.state = STATE.READY
+        self.in_cs = False
 
     action Next:
-        require self.state == STATE.READY
-        self.state = STATE.RUNNING
-
         # before critical section
         pass
 
-        in_cs.add(self.__id__)
         # critical section
+        self.in_cs = True
         pass
-        in_cs.remove(self.__id__)
 
         # after critical section
+        self.in_cs = False
         pass
 
         self.state = STATE.READY
@@ -34,6 +35,5 @@ role Process:
 
 action Init:
     processes = []
-    in_cs = set()
     for i in range(0, NUM_PROCESSES):
         processes.append(Process())
