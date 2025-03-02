@@ -2,8 +2,10 @@
 options:
     crash_on_yield: false
 ---
-# Model locking without the possibility of failure
 
+#
+# Model locking without the possibility of failure
+#
 
 always assertion MutualExclusion:
     return len(in_cs) <= 1
@@ -20,6 +22,10 @@ role Process:
         atomic:
             require self.state == STATE.READY
             self.state = STATE.RUNNING
+
+        # crash recovery: release lock if we own it
+        if self.__id__ in lock:
+            lock.remove(self.__id__)
 
         # before critical section
         pass
