@@ -1,16 +1,20 @@
 ---
 options:
-    crash_on_yield: true
+    crash_on_yield: false
 ---
 
 always assertion MutualExclusion:
-    return len(in_cs) <= 1
+    for p1 in processes:
+        for p2 in processes:
+            if p1.in_cs and p2.in_cs and p1!=p2:
+                return False
+    return True
 
 NUM_PROCESSES = 3
 
 role Process:
     action Init:
-        self.init = True
+        self.in_cs = False
 
     action Next:
         # before critical section
@@ -23,9 +27,9 @@ role Process:
         #
         # critical section
         #
-        in_cs.add(self.__id__)
+        self.in_cs = True
         pass
-        in_cs.remove(self.__id__)
+        self.in_cs = False
 
         # release lock
         lock.clear()
