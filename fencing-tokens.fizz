@@ -1,0 +1,59 @@
+---
+options:
+    crash_on_yield: false
+---
+
+NUM_PROCESSES = 2
+LEASE_LENGTH = 10
+
+
+always assertion MutualExclusion:
+    for p1 in processes:
+        for p2 in processes:
+            if p1.in_cs and p2.in_cs and p1!=p2:
+                return False
+    return True
+
+atomic action AdvanceClock:
+    now = now + 1
+
+role Process:
+    action Init:
+        self.in_cs = False
+
+    action Next:
+        atomic:
+            require lock.owner == None or now>=lock.expiration_time
+            lock = record(owner=self.__id__, expiration_time=now+LEASE_LENGTH)
+            self.token = next_token
+            next_token += 1
+
+        # We can only enter the critical section if we have the highest token seen so far
+        atomic:
+            if self.token > last_token_seen:
+                last_token_seen = self.token
+
+                # critical section
+                self.in_cs = True
+
+                pass  # this represents the actual critical section
+
+        # after critical section
+        self.in_cs = False
+
+        # release the lock
+        atomic:
+            if lock.owner == self.__id__:
+                lock.owner = None
+
+
+action Init:
+    processes = []
+    # global clock
+    now = 0
+
+    next_token = 1
+    last_token_seen = 0
+    lock = record(owner=None, expiration_time=-1)
+    for i in range(0, NUM_PROCESSES):
+        processes.append(Process())
