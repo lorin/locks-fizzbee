@@ -8,6 +8,7 @@ options:
 always assertion MutualExclusion:
     return len(in_cs) <= 1
 
+
 STATE = enum('READY', 'RUNNING')
 NUM_PROCESSES = 2
 
@@ -38,7 +39,6 @@ role Process:
         # release lock
         lock.clear()
         self.state = STATE.READY
-
 
 
 action Init:
