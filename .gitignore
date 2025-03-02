@@ -1,2 +1,3 @@
 out/*
 error-graph.svg
+*.json
