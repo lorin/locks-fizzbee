@@ -1,17 +1,13 @@
----
-options:
-    crash_on_yield: false
----
+#
 # Model a critical section with no enforcement of mutual exclusion
+#
 
+# Invariant to check
 always assertion MutualExclusion:
-    for p1 in processes:
-        for p2 in processes:
-            if p1.in_cs and p2.in_cs and p1!=p2:
-                return False
-    return True
+    return not any([p1.in_cs and p2.in_cs for p1 in processes
+                                          for p2 in processes
+                                          if p1 != p2])
 
-STATE = enum('READY', 'RUNNING')
 NUM_PROCESSES = 2
 
 role Process:
@@ -30,10 +26,7 @@ role Process:
         self.in_cs = False
         pass
 
-        self.state = STATE.READY
-
-
 action Init:
     processes = []
-    for i in range(0, NUM_PROCESSES):
+    for i in range(NUM_PROCESSES):
         processes.append(Process())
