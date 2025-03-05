@@ -1,11 +1,11 @@
 always assertion MutualExclusion:
-    return not any([p1.in_cs and p2.in_cs for p1 in processes
-                                          for p2 in processes
-                                          if p1 != p2])
+    return not any([p1.in_cs and p2.in_cs for t1 in threads
+                                          for t2 in threads
+                                          if t1 != t2])
 
-NUM_PROCESSES = 2
+NUM_THREADS = 2
 
-role Process:
+role Thread:
     action Init:
         self.in_cs = False
 
@@ -29,8 +29,8 @@ role Process:
         lock.clear()
 
 action Init:
-    processes = []
+    threads = []
     lock = set()
     in_cs = set()
-    for i in range(NUM_PROCESSES):
-        processes.append(Process())
+    for i in range(NUM_THREADS):
+        processes.append(Thread())
