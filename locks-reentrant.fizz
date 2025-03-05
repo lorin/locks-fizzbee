@@ -1,5 +1,5 @@
 always assertion MutualExclusion:
-    return not any([p1.in_cs and p2.in_cs for t1 in threads
+    return not any([t1.in_cs and t2.in_cs for t1 in threads
                                           for t2 in threads
                                           if t1 != t2])
 
@@ -33,4 +33,4 @@ action Init:
     lock = set()
     in_cs = set()
     for i in range(NUM_THREADS):
-        processes.append(Thread())
+        threads.append(Thread())
